@@ -1,0 +1,53 @@
+{
+  "name": "@payloadcms/storage-cloudinary",
+  "version": "1.0.0",
+  "description": "This package provides a simple way to use Cloudinary with Payload.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly --outDir dist",
+    "dev": "tsc -w",
+    "prepublishOnly": "npm run build",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanujpatra228/payloadcms-storage-cloudinary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tanujpatra228/payloadcms-storage-cloudinary/issues"
+  },
+  "homepage": "https://github.com/tanujpatra228/payloadcms-storage-cloudinary#readme",
+  "keywords": [
+    "payloadcms",
+    "cloudinary",
+    "storage",
+    "adapter"
+  ],
+  "author": "Tanuj G. Patra",
+  "license": "ISC",
+  "peerDependencies": {
+    "payload": "^3.23.0"
+  },
+  "dependencies": {
+    "@payloadcms/plugin-cloud-storage": "^3.23.0",
+    "react": "^18.3.1",
+    "cloudinary": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.10",
+    "typescript": "^5.7.3"
+  }
+}
