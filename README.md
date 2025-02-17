@@ -7,7 +7,7 @@ This package provides a simple way to use Cloudinary with Payload.
 ## Installation
 
 ```sh
-pnpm add @payloadcms/storage-cloudinary
+pnpm add payloadcms-storage-cloudinary
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ pnpm add @payloadcms/storage-cloudinary
 - The `cloudinaryConfig` object should include your Cloudinary credentials: `cloud_name`, `api_key`, and `api_secret`.
 
 ```ts
-import { cloudinaryStorage } from '@payloadcms/storage-cloudinary'
+import { cloudinaryStorage } from 'payloadcms-storage-cloudinary'
 import { Media } from './collections/Media'
 
 export default buildConfig({
