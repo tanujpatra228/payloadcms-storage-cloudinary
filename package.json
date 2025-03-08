@@ -1,8 +1,9 @@
 {
   "name": "payloadcms-storage-cloudinary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package provides a simple way to use Cloudinary with Payload.",
   "type": "module",
+  "packageManager": "pnpm@10.6.1",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -15,10 +16,24 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "scripts": {
-    "build": "tsc --emitDeclarationOnly --outDir dist",
+    "build": "pnpm build:types && pnpm build:swc",
+    "build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "clean": "rimraf -g {dist,*.tsbuildinfo}",
     "dev": "tsc -w",
-    "test": "test"
+    "prepublishOnly": "pnpm clean && pnpm turbo build"
   },
   "repository": {
     "type": "git",
@@ -37,16 +52,21 @@
   "author": "Tanuj G. Patra",
   "license": "ISC",
   "peerDependencies": {
-    "payload": "^3.23.0"
+    "payload": "3.27.0"
   },
   "dependencies": {
     "@payloadcms/plugin-cloud-storage": "^3.23.0",
-    "react": "^18.3.1",
-    "cloudinary": "^2.5.1"
+    "cloudinary": "^2.5.1",
+    "payload": "3.27.0"
   },
   "devDependencies": {
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.11.8",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.10",
+    "@types/react-dom": "19.0.3",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.4.4",
     "typescript": "^5.7.3"
   }
 }

@@ -1,8 +1,8 @@
 import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage';
-import { getGenerateURL } from './generateURL';
-import { getHandleUpload } from './handleUpload';
-import { getHandleDelete } from './handleDelete';
-import { getStaticHandler } from './staticHandler';
+import { getGenerateURL } from './generateURL.js';
+import { getHandleUpload } from './handleUpload.js';
+import { getHandleDelete } from './handleDelete.js';
+import { getStaticHandler } from './staticHandler.js';
 import { v2 as cloudinary } from 'cloudinary';
 import { GenerateURL, HandleDelete, HandleUpload, StaticHandler } from '@payloadcms/plugin-cloud-storage/types';
 import { Field } from 'payload';

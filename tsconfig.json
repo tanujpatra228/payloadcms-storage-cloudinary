@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "es6",
+    "module": "NodeNext",
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "sourceMap": true,
     "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
+    "skipLibCheck": true,
     "paths": {
       "*": ["node_modules/*", "src/*"]
     }
